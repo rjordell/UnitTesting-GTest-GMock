@@ -10,7 +10,7 @@ class MockAwardCeremonyActions : public AwardCeremonyActions {
 		MOCK_METHOD(void, awardBronze, (std::string recepient), (override)); 
 		MOCK_METHOD(void, awardSilver, (std::string recepient), (override)); 
 		MOCK_METHOD(void, awardGold, (std::string recepient), (override)); 
-		MOCK_METHOD(void, turnOffLightsAndGoHome, (), (override)); 
+		MOCK_METHOD(void, turnOffTheLightsAndGoHome, (), (override)); 
 };
 
 class StubRankList : public RankList {
@@ -26,7 +26,7 @@ class StubRankList : public RankList {
 };
 
 TEST(AwardsTest, testAwardsCeremony) {
-	MockAwardsCeremonyActions mockActions;
+	MockAwardCeremonyActions mockActions;
 	StubRankList stubList;
 	EXPECT_CALL(mockActions, awardBronze("a"));
 	performAwardCeremony(stubList, mockActions);
