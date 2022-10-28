@@ -26,8 +26,8 @@ class StubRankList : public RankList {
 };
 
 TEST(AwardsTest, testAwardsCeremony) {
-	MockAwardsCeremonyActions mockAwardsCeremony;
+	MockAwardsCeremonyActions mockActions;
 	StubRankList stubList;
-	EXPECT_CALL(mockAwardsCeremony, awardBronze("a"));
-	performAwardCeremony(stubList, mockAWardsCeremony);
+	EXPECT_CALL(mockActions, awardBronze("a"));
+	performAwardCeremony(stubList, mockActions);
 }
